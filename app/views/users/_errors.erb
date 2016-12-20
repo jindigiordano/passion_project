@@ -1,0 +1,11 @@
+<% if @user %>
+  <% if @user.errors.any? %>
+    <section class="errors">
+      <ul>
+        <% @user.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+<% end %>

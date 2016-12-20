@@ -1,0 +1,15 @@
+<h2>All the things:</h2>
+<ul>
+  <% @things.each do |thing| %>
+    <li>
+      <a href="/things/<%= thing.id %>"><%= thing.name %></a>
+      <% if thing.user == current_user %>
+        <%= erb :'/things/_thing_controls', locals: {thing: thing} %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<div>
+  <a href="/things/new">Make a new thing</a>
+</div>
