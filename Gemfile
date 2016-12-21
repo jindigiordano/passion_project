@@ -15,6 +15,7 @@ gem 'rake'
 gem 'shotgun'
 gem 'bcrypt'
 gem 'hirb'
+gem 'swapi'
 
 group :test do
   gem 'database_cleaner', '~> 1.4.1'

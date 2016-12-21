@@ -1,6 +1,6 @@
 <h1>Hello, <%= @user.username %>!</h1>
 <ul>
-  <% @things.each do |thing| %>
-    <li><a href="/things/<%= thing.id %>"><%= thing.name %></a></li>
+  <% @characters.each do |character| %>
+    <li><a href="/characters/<%= character.id %>"><%= character.name %></a></li>
   <% end %>
 </ul>

@@ -1,7 +1,7 @@
 #new
 # get '/sessions/new' do
 get '/login' do
-  erb :'/sessions/new'
+  erb :'/sessions/_new'
 end
 
 post '/sessions' do
