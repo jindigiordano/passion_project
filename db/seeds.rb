@@ -13,7 +13,7 @@ end
 
 # Create sample characters
 genders = ['male', 'female', 'non-binary', 'none']
-classes = ['Aerobat', 'Antarian Ranger', 'Big Game Hunter', 'Bodyguard',
+professions = ['Aerobat', 'Antarian Ranger', 'Big Game Hunter', 'Bodyguard',
             'Bounty Hunter', 'Changeling', 'Chief Engineer', 'Crime Lord',
             'Deep Space Pilot', 'Elite Trooper', 'Holovid Star', 'Infiltrator',
             'Loyal Protector', 'Martial Arts Master', 'Master Duelist', 'Master Gunner',
@@ -25,15 +25,16 @@ classes = ['Aerobat', 'Antarian Ranger', 'Big Game Hunter', 'Bodyguard',
             'CorSec Officer', 'Crime Broker', 'Espionage Droid', 'Lord of the Expanse', 'Senate Guard', 'Shadow Wing Captain',
             'Dark Side Assassin', 'Dark Side Devotee', 'Dark Side Marauder', 'Sith Acolyte', 'Sith Lord', 'Sith Warrior']
 
-@users = User.all
+  @users = User.all
+  char_species = JSON.parse(Swapi.get_species 1)
+  char_species_name = char_species["name"]
+  char_planet = JSON.parse(Swapi.get_planet 2)
+  char_planet_name = char_planet["name"]
+  char_vehicle = JSON.parse(Swapi.get_vehicle 4)
+  char_vehicle_name = char_vehicle["name"]
+  char_starship = JSON.parse(Swapi.get_starship 5)
+  char_starship_name = char_starship["name"]
 
-10.times do
-  char_species = Swapi.get_species rand(1..37)
-  char_planet = Swapi.get_planet rand(1..61)
-  char_vehicle = Swapi.get_vehicle rand(1..39)
-  char_starship = Swapi.get_starship rand(9..13)
 
-  character = Character.new(name: Faker::StarWars.character, gender: genders.sample, species: char_species,
-                            homeplanet: char_planet, class: classes.sample, vehicle: char_vehicle,
-                            starship: char_starship, user_id: rand(1..@users.length), backstory: "")
-end
+  character = Character.new(name: Faker::StarWars.character, gender: genders.sample, species: char_species_name, homeplanet: char_planet_name, profession: professions.sample, vehicle: char_vehicle_name, starship: char_starship_name, user_id: rand(1..@users.length), backstory: "")
+  character.save!

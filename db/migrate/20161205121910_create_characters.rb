@@ -5,7 +5,7 @@ class CreateCharacters < ActiveRecord::Migration
       t.string  :gender
       t.string  :species
       t.string  :homeplanet
-      t.string  :class
+      t.string  :profession
       t.string  :vehicle
       t.string  :starship
       t.integer :user_id
