@@ -7,5 +7,5 @@ $(document).ready(function() {
 
 
   // my first successful api call
-  $.getJSON('http://swapi.co/api/planets/1/', function(planet){$('.test').text(planet["name"])});
+  // $.getJSON('http://swapi.co/api/planets/1/', function(planet){$('.test').text(planet["name"])});
 });
