@@ -1,7 +1,25 @@
-<h2><%= @thing.name %></h2>
+<h2><%= @character.name %></h2>
 <div>
-  <%= @thing.description %>
+  <label>Gender:</label><%= @character.gender %>
 </div>
 <div>
-  <a href="/characters">all the things</a>
+  <label>Species:</label><%= @species_obj["name"]%>
+</div>
+<div>
+  <label>Homeplanet:</label><%= @character.homeplanet %>
+</div>
+<div>
+  <label>Profession:</label><%= @character.profession %>
+</div>
+<div>
+  <label>Vehicle:</label><%= @character.vehicle %>
+</div>
+<div>
+  <label>Starship:</label><%= @character.starship %>
+</div>
+<div>
+  <label>Backstory:</label><%= @character.backstory %>
+</div>
+<div>
+  <label>Creator ID:</label><%= @character.user_id %>
 </div>

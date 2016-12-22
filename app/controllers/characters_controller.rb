@@ -30,6 +30,7 @@ post '/characters' do
 
 
 
+
   @character = Character.new({
     name: params[:name],
     gender: params[:gender],
@@ -38,11 +39,11 @@ post '/characters' do
     profession: professions[rand(0..professions.length)],
     vehicle: all_vehicles["results"][rand(0..max_vehicles)],
     starship: all_starships["results"][rand(0..max_starships)],
-    user_id: current_user,
+    user_id: current_user.id,
     backstory: ""
   })
 
-  p @character
+  @character.save!
 
   if @character.save
     redirect "characters/#{@character.id}"
@@ -64,6 +65,11 @@ end
 # show
 get '/characters/:id' do
   @character = Character.find(params[:id])
+
+  species_matchobj = /\bspecies\b\/\d/.match(@character.species)
+  species_num = species_matchobj.to_s[-1].to_s
+  @species_obj = JSON.parse(Swapi.get_species species_num)
+
 
   erb :'characters/_show'
 end
