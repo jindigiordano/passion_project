@@ -31,12 +31,8 @@ end
 
 # show
 get '/users/:id' do
-  if params[:id].to_i == current_user.id
-    @user = User.find(params[:id])
-    @characters = @user.characters
+  @user = User.find(params[:id])
+  @characters = @user.characters
 
-    erb :'users/show'
-  else
-    redirect "users/"
-  end
+  erb :'users/show'
 end
