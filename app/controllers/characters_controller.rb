@@ -7,17 +7,41 @@ end
 
 # create
 post '/characters' do
-  all_species = JSON.parse(Swapi.get_all 'species')
-  random_species = all_species["results"][rand(0..all_species.length)]
-  species_matchobj = /\bspecies\b\/\d/.match(random_species.to_s)
-  species_num = species_matchobj.to_s[-1].to_s
+  #pick random page
+  i = rand(1..4)
+  url = 'http://swapi.co/api/species/?page=' + i.to_s
+  uri = URI(url)
+  response = Net::HTTP.get(uri)
+  species_page = JSON.parse(response)
+  species_arr = species_page["results"]
+  #random species
+  rand_idx = rand(0..(species_arr.length-1))
+  random_species = species_arr[rand_idx]
+  species_matchobj = /\bspecies\b\/\d+/.match(random_species.to_s)
+  if species_matchobj.to_s.length == 9
+    species_num = species_matchobj.to_s[-1].to_s
+  elsif species_matchobj.to_s.length == 10
+    species_num = species_matchobj.to_s[-2..-1].to_s
+  end
   species_obj = JSON.parse(Swapi.get_species species_num)
 
 
-  all_planets = JSON.parse(Swapi.get_all 'planets')
-  random_planet = all_planets["results"][rand(0..all_species.length)]
-  planet_matchobj = /\bplanets\b\/\d/.match(random_planet.to_s)
-  planet_num = planet_matchobj.to_s[-1].to_s
+  #pick random page
+  i = rand(1..7)
+  url = 'http://swapi.co/api/planets/?page=' + i.to_s
+  uri = URI(url)
+  response = Net::HTTP.get(uri)
+  planet_page = JSON.parse(response)
+  planet_arr = planet_page["results"]
+  #random planet
+  rand_idx = rand(0..(planet_arr.length-1))
+  random_planet = planet_arr[rand_idx]
+  planet_matchobj = /\bplanets\b\/\d+/.match(random_planet.to_s)
+  if planet_matchobj.to_s.length == 9
+    planet_num = planet_matchobj.to_s[-1].to_s
+  elsif planet_matchobj.to_s.length == 10
+    planet_num = planet_matchobj.to_s[-2..-1].to_s
+  end
   planet_obj = JSON.parse(Swapi.get_planet planet_num)
 
 
