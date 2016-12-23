@@ -13,11 +13,10 @@
       Species:
     </th>
     <td>
-      <!-- <a href="/species/<%= @character.species_id %>"> -->
-        <%= @character.species%>
-        <!-- </a> -->
+      <%= @character.species%>
+      <a href="" class="show-details">details</a>
     </td>
-    <td>
+    <td class="attribute-details">
       <%= erb :"species/_show" %>
     </td>
   </tr>
@@ -27,8 +26,9 @@
     </th>
     <td>
     <%= @character.homeplanet %>
+    <a href="" class="show-details">details</a>
     </td>
-    <td>
+    <td class="attribute-details">
       <%= erb :"planets/_show" %>
     </td>
   </tr>
@@ -38,14 +38,6 @@
     </th>
     <td>
     <%= @character.profession %>
-    </td>
-  </tr>
-  <tr>
-    <th>
-      Backstory:
-    </th>
-    <td>
-    <%= @character.backstory %>
     </td>
   </tr>
   <tr>

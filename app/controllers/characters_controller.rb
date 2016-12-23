@@ -8,7 +8,7 @@ end
 # create
 post '/characters' do
   all_species = JSON.parse(Swapi.get_all 'species')
-  random_species = all_species["results"].sample
+  random_species = all_species["results"][rand(0..all_species.length)]
   species_matchobj = /\bspecies\b\/\d/.match(random_species.to_s)
   species_num = species_matchobj.to_s[-1].to_s
   species_obj = JSON.parse(Swapi.get_species species_num)
@@ -18,7 +18,7 @@ post '/characters' do
   p species_obj["name"]
 
   all_planets = JSON.parse(Swapi.get_all 'planets')
-  random_planet = all_planets["results"].sample
+  random_planet = all_planets["results"][rand(0..all_species.length)]
   planet_matchobj = /\bplanets\b\/\d/.match(random_planet.to_s)
   planet_num = planet_matchobj.to_s[-1].to_s
   planet_obj = JSON.parse(Swapi.get_planet planet_num)
