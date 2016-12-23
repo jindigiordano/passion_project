@@ -6,8 +6,13 @@ $(document).ready(function() {
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 
 
-  // my first successful api call
-  // $.getJSON('http://swapi.co/api/planets/1/', function(planet){$('.test').text(planet["name"])});
+  // playing around with getting multiple pages
+  // var all_planets = [];
+  // var i = 1;
+  // console.log($.getJSON('http://swapi.co/api/planets/?page=' + i.toString(), function(planets){return planets["results"]}));
+  // i++;
+  // console.log($.getJSON('http://swapi.co/api/planets/?page=' + i.toString(), function(planets){return planets["results"]}));
+
   bindEventHandlers();
 });
 
@@ -16,4 +21,5 @@ var bindEventHandlers = function() {
     event.preventDefault();
     $(event.target).closest('tr').find('.attribute-details').toggle();
   })
+
 }
