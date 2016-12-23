@@ -1,5 +1,5 @@
 <h2>All the characters:</h2>
-<ul>
+<ul class="character-list">
   <% @characters.each do |character| %>
     <li>
       <a href="/characters/<%= character.id %>"><%= character.name %></a>
@@ -11,5 +11,5 @@
 </ul>
 
 <div>
-  <a href="/characters/new">Make a new thing</a>
+  <a href="/characters/new"><button>Create a New Character</button></a>
 </div>

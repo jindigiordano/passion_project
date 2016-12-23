@@ -1,6 +1,6 @@
-<h1>Hello, <%= current_user.username %>!</h1>
+<h3>Hello, <%= current_user.username %>!</h3>
 <h2>Your Characters:</h2>
-<ul>
+<ul class="character-list">
   <% @characters.each do |character| %>
     <li>
       <a href="/characters/<%= character.id %>"><%= character.name %></a>
@@ -11,4 +11,4 @@
   <% end %>
 </ul>
 
-<a href="/chracters/new">Make a New Character!</a>
+<a href="/characters/new"><button>Create a New Character</button></a>
