@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 20px auto;
+  padding: 30px;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -27,8 +28,12 @@ header form, span form {
   display: inline-block;
 }
 
-a {
+header a {
   color: #eee;
+}
+
+a {
+  color: #333;
 }
 
 .sign-out-link, .delete-link {
@@ -62,4 +67,15 @@ tr:nth-child(odd) {
 
 .attribute-details {
   display: none;
+}
+
+.character-list {
+  list-style: none;
+  column-count: 2;
+}
+
+.character-list input[type="submit"]{
+  background: none;
+  border: none;
+  text-decoration: underline;
 }
