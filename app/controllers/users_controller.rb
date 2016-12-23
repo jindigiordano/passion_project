@@ -20,13 +20,13 @@ post '/users' do
     redirect "users/#{@user.id}"
   else
     # TODO Show the user a descriptive error message
-    erb :'users/new'
+    erb :'users/_new'
   end
 end
 
 # new
 get '/users/new' do
-  erb :'users/new'
+  erb :'users/_new'
 end
 
 # show
@@ -34,7 +34,7 @@ get '/users/:id' do
   if params[:id].to_i == current_user.id
     @user = User.find(params[:id])
     @characters = @user.characters
-    erb :'users/show'
+    erb :'users/_show'
   else
     redirect "users/#{current_user.id}"
   end
