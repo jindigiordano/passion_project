@@ -1,10 +1,16 @@
+body {
+  background-image: url('../img/Executorbridge.jpg');
+}
+
 #content {
-  width: 100%;
-  height: 100vh;
+  width: 500px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 input, textarea {
@@ -15,21 +21,21 @@ input, textarea {
 
 header {
   padding: .5em 1em;
-  background-color: antiquewhite;
+  background-color: black;
 }
 header form, span form {
   display: inline-block;
 }
 
 a {
-  color: #333333;
+  color: #eee;
 }
 
 .sign-out-link, .delete-link {
   display: inline-block;
   border: none;
   background: none;
-  color: #333333;
+  color: #eee;
   font-size: inherit;
   text-decoration: underline;
   cursor: pointer;
@@ -50,8 +56,8 @@ th, td {
     text-align: left;
 }
 
-tr:nth-child(even) {
-  background: #CCC;
+tr:nth-child(odd) {
+  background: #eee;
 }
 
 .attribute-details {
