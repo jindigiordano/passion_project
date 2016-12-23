@@ -1,6 +1,7 @@
 get '/' do
-  # all_ships = JSON.parse(Swapi.get_all 'starships')
-  # max = all_ships["results"].length
-  # p all_ships["results"][rand(0..max)]
+  if current_user
+    @user = current_user
+    @characters = @user.characters
+  end
   erb :index
 end

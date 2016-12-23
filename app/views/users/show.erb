@@ -1,0 +1,14 @@
+<h1>Hello, <%= current_user.username %>!</h1>
+<h2>Your Characters:</h2>
+<ul>
+  <% @characters.each do |character| %>
+    <li>
+      <a href="/characters/<%= character.id %>"><%= character.name %></a>
+      <% if character.user == current_user %>
+        <%= erb :'/characters/_character_controls', locals: {character: character} %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/chracters/new">Make a New Character!</a>
