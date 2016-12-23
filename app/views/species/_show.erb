@@ -1,0 +1,66 @@
+<table>
+  <tr>
+    <th>
+      Classification:
+    </th>
+    <td>
+      <%= JSON.parse(Swapi.get_species @character.species_id)["classification"] %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Designation:
+    </th>
+    <td>
+      <%= JSON.parse(Swapi.get_species @character.species_id)["designation"] %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Average Height:
+    </th>
+    <td>
+      <%= JSON.parse(Swapi.get_species @character.species_id)["average_height"] %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Skin Colors:
+    </th>
+    <td>
+      <%= JSON.parse(Swapi.get_species @character.species_id)["skin_colors"] %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Hair Colors:
+    </th>
+    <td>
+      <%= JSON.parse(Swapi.get_species @character.species_id)["hair_colors"] %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Eye Colors:
+    </th>
+    <td>
+      <%= JSON.parse(Swapi.get_species @character.species_id)["eye_colors"] %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Average Lifespans:
+    </th>
+    <td>
+      <%= JSON.parse(Swapi.get_species @character.species_id)["average_lifespan"] %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Language:
+    </th>
+    <td>
+      <%= JSON.parse(Swapi.get_species @character.species_id)["language"] %>
+    </td>
+  </tr>
+</table>

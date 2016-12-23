@@ -1,25 +1,59 @@
 <h2><%= @character.name %></h2>
-<div>
-  <label>Gender:</label><%= @character.gender %>
-</div>
-<div>
-  <label>Species:</label><%= @species_obj["name"]%>
-</div>
-<div>
-  <label>Homeplanet:</label><%= @character.homeplanet %>
-</div>
-<div>
-  <label>Profession:</label><%= @character.profession %>
-</div>
-<div>
-  <label>Vehicle:</label><%= @character.vehicle %>
-</div>
-<div>
-  <label>Starship:</label><%= @character.starship %>
-</div>
-<div>
-  <label>Backstory:</label><%= @character.backstory %>
-</div>
-<div>
-  <label>Creator ID:</label><%= @character.user_id %>
-</div>
+<table>
+  <tr>
+    <th>
+      Gender:
+    </th>
+    <td>
+    <%= @character.gender %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Species:
+    </th>
+    <td>
+      <!-- <a href="/species/<%= @character.species_id %>"> -->
+        <%= @character.species%>
+        <!-- </a> -->
+    </td>
+    <td>
+      <%= erb :"species/_show" %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Homeplanet:
+    </th>
+    <td>
+    <%= @character.homeplanet %>
+    </td>
+    <td>
+      <%= erb :"planets/_show" %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Profession:
+    </th>
+    <td>
+    <%= @character.profession %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Backstory:
+    </th>
+    <td>
+    <%= @character.backstory %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Creator:</label>
+    </th>
+    <td>
+      <%= @user.username %>
+    </td>
+  </tr>
+</table>

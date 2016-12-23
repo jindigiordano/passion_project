@@ -4,10 +4,10 @@ class CreateCharacters < ActiveRecord::Migration
       t.string  :name
       t.string  :gender
       t.string  :species
+      t.integer :species_id
       t.string  :homeplanet
+      t.integer :homeplanet_id
       t.string  :profession
-      t.string  :vehicle
-      t.string  :starship
       t.integer :user_id
       t.text    :backstory
 
