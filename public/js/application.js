@@ -8,4 +8,12 @@ $(document).ready(function() {
 
   // my first successful api call
   // $.getJSON('http://swapi.co/api/planets/1/', function(planet){$('.test').text(planet["name"])});
+  bindEventHandlers();
 });
+
+var bindEventHandlers = function() {
+  $('.show-details').on('click', function(event){
+    event.preventDefault();
+    $(event.target).closest('tr').find('.attribute-details').toggle();
+  })
+}

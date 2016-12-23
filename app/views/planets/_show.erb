@@ -1,10 +1,13 @@
+<% planet = JSON.parse(Swapi.get_planet @character.homeplanet_id) %>
+
+
 <table>
   <tr>
     <th>
       Rotation Period:
     </th>
     <td>
-      <%= JSON.parse(Swapi.get_planet @character.homeplanet_id)["rotation_period"] %>
+      <%= planet["rotation_period"] %>
     </td>
   </tr>
   <tr>
@@ -12,7 +15,7 @@
       Orbital Period:
     </th>
     <td>
-      <%= JSON.parse(Swapi.get_planet @character.homeplanet_id)["orbital_period"] %>
+      <%= planet["orbital_period"] %>
     </td>
   </tr>
   <tr>
@@ -20,7 +23,7 @@
       Diameter:
     </th>
     <td>
-      <%= JSON.parse(Swapi.get_planet @character.homeplanet_id)["diameter"] %>
+      <%= planet["diameter"] %>
     </td>
   </tr>
   <tr>
@@ -28,7 +31,7 @@
       Climate:
     </th>
     <td>
-      <%= JSON.parse(Swapi.get_planet @character.homeplanet_id)["climate"] %>
+      <%= planet["climate"] %>
     </td>
   </tr>
   <tr>
@@ -36,7 +39,7 @@
       Gravity:
     </th>
     <td>
-      <%= JSON.parse(Swapi.get_planet @character.homeplanet_id)["gravity"] %>
+      <%= planet["gravity"] %>
     </td>
   </tr>
   <tr>
@@ -44,7 +47,7 @@
       Terrain:
     </th>
     <td>
-      <%= JSON.parse(Swapi.get_planet @character.homeplanet_id)["terrain"] %>
+      <%= planet["terrain"] %>
     </td>
   </tr>
   <tr>
@@ -52,7 +55,7 @@
       Surface Water:
     </th>
     <td>
-      <%= JSON.parse(Swapi.get_planet @character.homeplanet_id)["surface_water"] %>
+      <%= planet["surface_water"] %>
     </td>
   </tr>
   <tr>
@@ -60,7 +63,7 @@
       Population:
     </th>
     <td>
-      <%= JSON.parse(Swapi.get_planet @character.homeplanet_id)["population"] %>
+      <%= planet["population"] %>
     </td>
   </tr>
 </table>

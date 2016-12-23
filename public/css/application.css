@@ -44,3 +44,16 @@ a {
   list-style: none;
   color: red;
 }
+
+th, td {
+    padding-right: 25px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+  background: #CCC;
+}
+
+.attribute-details {
+  display: none;
+}
