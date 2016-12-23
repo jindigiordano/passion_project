@@ -1,0 +1,45 @@
+<h2><%= @character.name %></h2>
+<table>
+  <tr>
+    <th>
+      Gender:
+    </th>
+    <td>
+    <%= @character.gender %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Species:
+    </th>
+    <td>
+      <%= @character.species%>
+      <a href="" class="show-details">details</a>
+    </td>
+    <td class="attribute-details">
+      <%= erb :"species/_show" %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Homeplanet:
+    </th>
+    <td>
+    <%= @character.homeplanet %>
+    <a href="" class="show-details">details</a>
+    </td>
+    <td class="attribute-details">
+      <%= erb :"planets/_show" %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Profession:
+    </th>
+    <td>
+    <%= @character.profession %>
+    </td>
+  </tr>
+</table>
+
+<span class="creator">Creator: <%= @user.username %></span>
