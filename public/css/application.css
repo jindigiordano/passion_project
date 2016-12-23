@@ -79,3 +79,8 @@ tr:nth-child(odd) {
   border: none;
   text-decoration: underline;
 }
+
+.character-list li {
+  height: 25px;
+  margin: 5px;
+}

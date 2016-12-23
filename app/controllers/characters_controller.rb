@@ -79,5 +79,5 @@ end
 delete '/characters/:id' do
   @character = Character.find(params[:id])
   @character.destroy
-  redirect '/characters'
+  redirect '/'
 end
