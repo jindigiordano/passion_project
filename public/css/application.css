@@ -103,3 +103,21 @@ tr:nth-child(odd) {
   margin-top: 25px;
   color: #777;
 }
+
+@font-face {
+    font-family: 'Aurebesh-Normal';
+    src:url('/fonts/Aurebesh-Normal.ttf.woff') format('woff'),
+        url('/fonts/Aurebesh-Normal.ttf.svg#Aurebesh-Normal') format('svg'),
+        url('/fonts/Aurebesh-Normal.ttf.eot'),
+        url('/fonts/Aurebesh-Normal.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1:hover {
+   font-family: 'Aurebesh-Normal';
+}
+
+h1 {
+  line-height: 50px;
+}

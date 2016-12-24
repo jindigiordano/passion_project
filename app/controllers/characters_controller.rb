@@ -33,6 +33,7 @@ post '/characters' do
   response = Net::HTTP.get(uri)
   planet_page = JSON.parse(response)
   planet_arr = planet_page["results"]
+  
   #random planet
   rand_idx = rand(0..(planet_arr.length-1))
   random_planet = planet_arr[rand_idx]
