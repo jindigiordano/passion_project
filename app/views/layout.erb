@@ -19,19 +19,23 @@
 </head>
 <body>
 <header>
-  <a href="/">Home</a>
-  <a href="/users">Browse Users</a>
-  <a href="/characters">Browse Characters</a>
+  <h1 class="white-font">Star Wars Random Character Generator</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/users">Browse Users</a>
+    <a href="/characters">Browse Characters</a>
+    <% if current_user %>
+      <a href="/users/<%= current_user.id %>"><%= current_user.username %></a>
+      <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete" />
+        <input type="submit" class="sign-out-link" value="Sign Out" />
+      </form>
+    <% else %>
+      <a href="/login">Login</a>
+    <% end %>
+  </nav>
 
-  <% if current_user %>
-    <a href="/users/<%= current_user.id %>"><%= current_user.username %></a>
-    <form action="/logout" method="post">
-      <input type="hidden" name="_method" value="delete" />
-      <input type="submit" class="sign-out-link" value="sign out" />
-    </form>
-  <% else %>
-    <a href="/login">Login</a>
-  <% end %>
+
 </header>
 <div id="content">
   <%= yield %>
