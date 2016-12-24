@@ -1,5 +1,5 @@
-<h2>All the users:</h2>
-<ul>
+<h2>Users:</h2>
+<ul class="user-list">
   <% @users.each do |user| %>
     <li>
       <a href="/users/<%= user.id %>"><%= user.username %></a>
